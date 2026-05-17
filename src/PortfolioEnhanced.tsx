@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+const baseUrl = import.meta.env.BASE_URL;
+const assetPath = (path: string) => `${baseUrl}${path.replace(/^\/+/, "")}`;
+
 type Metric = {
   label: string;
   value: string;
@@ -133,8 +136,8 @@ const projects: Project[] = [
       { value: "成熟可复用", label: "标准化品牌管理体系" },
     ],
     images: [
-      "/portfolio/project-1-a.png",
-      "/portfolio/project-1-b.png",
+      assetPath("portfolio/project-1-a.png"),
+      assetPath("portfolio/project-1-b.png"),
     ],
   },
   {
@@ -155,8 +158,8 @@ const projects: Project[] = [
       { value: "109个", label: "提质增效案例沉淀" },
     ],
     images: [
-      "/portfolio/project-2-a.png",
-      "/portfolio/project-2-b.png",
+      assetPath("portfolio/project-2-a.png"),
+      assetPath("portfolio/project-2-b.png"),
     ],
   },
   {
@@ -181,8 +184,8 @@ const projects: Project[] = [
       },
     ],
     images: [
-      "/portfolio/project-3-a.jpeg",
-      "/portfolio/project-3-b.jpeg",
+      assetPath("portfolio/project-3-a.jpeg"),
+      assetPath("portfolio/project-3-b.jpeg"),
     ],
   },
   {
@@ -202,8 +205,8 @@ const projects: Project[] = [
       { value: "行业标杆级", label: "打造差异化人格化IP" },
     ],
     images: [
-      "/portfolio/project-4-a.png",
-      "/portfolio/project-4-b.png",
+      assetPath("portfolio/project-4-a.png"),
+      assetPath("portfolio/project-4-b.png"),
     ],
   },
   {
@@ -228,7 +231,7 @@ const projects: Project[] = [
           "有效对冲外部噪音，实现品牌全网声量年均增长30%+，持续扩大品牌影响力。",
       },
     ],
-    images: ["/portfolio/project-5-a.jpeg"],
+    images: [assetPath("portfolio/project-5-a.jpeg")],
   },
 ];
 
@@ -591,7 +594,7 @@ function PortfolioEnhanced() {
           <div className="grid gap-4 md:gap-5">
             <div className="mx-auto w-full rounded-[1.9rem] border border-[var(--color-line)] bg-white/76 p-4 shadow-[0_20px_50px_rgba(83,60,30,0.08)] md:rounded-[2.25rem] md:p-5">
               <img
-                src="/portfolio/profile.png"
+                src={assetPath("portfolio/profile.png")}
                 alt="喻静"
                 className="aspect-[4/4.5] w-full rounded-[1.5rem] object-cover md:rounded-[1.75rem]"
               />
@@ -866,7 +869,7 @@ function PortfolioEnhanced() {
 
             <div className="rounded-[1.9rem] border border-[var(--color-line)] bg-[var(--color-paper)] p-4 shadow-[0_14px_40px_rgba(82,58,30,0.08)] md:rounded-[2.25rem] md:p-5">
             <img
-              src="/portfolio/training.jpeg"
+              src={assetPath("portfolio/training.jpeg")}
               alt="培训赋能"
               className="h-full w-full rounded-[1.3rem] object-cover md:rounded-[1.5rem]"
             />

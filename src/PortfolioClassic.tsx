@@ -1,3 +1,6 @@
+const baseUrl = import.meta.env.BASE_URL;
+const assetPath = (path: string) => `${baseUrl}${path.replace(/^\/+/, "")}`;
+
 type Metric = {
   label: string;
   value: string;
@@ -131,8 +134,8 @@ const projects: Project[] = [
       { value: "成熟可复用", label: "标准化品牌管理体系" },
     ],
     images: [
-      "/portfolio/project-1-a.png",
-      "/portfolio/project-1-b.png",
+      assetPath("portfolio/project-1-a.png"),
+      assetPath("portfolio/project-1-b.png"),
     ],
   },
   {
@@ -153,8 +156,8 @@ const projects: Project[] = [
       { value: "109个", label: "提质增效案例沉淀" },
     ],
     images: [
-      "/portfolio/project-2-a.png",
-      "/portfolio/project-2-b.png",
+      assetPath("portfolio/project-2-a.png"),
+      assetPath("portfolio/project-2-b.png"),
     ],
   },
   {
@@ -179,8 +182,8 @@ const projects: Project[] = [
       },
     ],
     images: [
-      "/portfolio/project-3-a.jpeg",
-      "/portfolio/project-3-b.jpeg",
+      assetPath("portfolio/project-3-a.jpeg"),
+      assetPath("portfolio/project-3-b.jpeg"),
     ],
   },
   {
@@ -200,8 +203,8 @@ const projects: Project[] = [
       { value: "行业标杆级", label: "打造差异化人格化IP" },
     ],
     images: [
-      "/portfolio/project-4-a.png",
-      "/portfolio/project-4-b.png",
+      assetPath("portfolio/project-4-a.png"),
+      assetPath("portfolio/project-4-b.png"),
     ],
   },
   {
@@ -226,7 +229,7 @@ const projects: Project[] = [
           "有效对冲外部噪音，实现品牌全网声量年均增长30%+，持续扩大品牌影响力。",
       },
     ],
-    images: ["/portfolio/project-5-a.jpeg"],
+    images: [assetPath("portfolio/project-5-a.jpeg")],
   },
 ];
 
@@ -373,7 +376,7 @@ function App() {
 
           <div className="mx-auto w-full max-w-md rounded-[2rem] border border-[var(--color-line)] bg-white/70 p-5">
             <img
-              src="/portfolio/profile.png"
+              src={assetPath("portfolio/profile.png")}
               alt="喻静"
               className="aspect-[4/4.6] w-full rounded-[1.5rem] object-cover"
             />
@@ -625,7 +628,7 @@ function App() {
 
           <div className="rounded-[2rem] border border-[var(--color-line)] bg-[var(--color-paper)] p-5">
             <img
-              src="/portfolio/training.jpeg"
+              src={assetPath("portfolio/training.jpeg")}
               alt="培训赋能"
               className="h-full w-full rounded-[1.5rem] object-cover"
             />
