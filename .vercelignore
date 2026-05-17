@@ -1,0 +1,6 @@
+.DS_Store
+.git
+.video_refs
+dist
+node_modules
+outputs
